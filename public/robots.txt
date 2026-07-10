@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /students
+Disallow: /student
+Disallow: /profile
+Disallow: /pdf
+Disallow: /storage

@@ -1,0 +1,11 @@
+{
+    "sarabun": {
+        "normal": "\/var\/www\/html\/egt\/vru-form\/storage\/fonts\/sarabun_normal_82fb2e2371d588a3b81c571352f937a2",
+        "bold": "\/var\/www\/html\/egt\/vru-form\/storage\/fonts\/sarabun_bold_58d1cbb7cc86e20a0221b4678e0c85fe",
+        "italic": "\/var\/www\/html\/egt\/vru-form\/storage\/fonts\/sarabun_italic_ed7e0efbce846294706ccd9903f83a5a",
+        "bold_italic": "sarabun_bold_italic_690d7dc91b5c1c8fac6b1d6ef2f17845"
+    },
+    "thsarabunnew": {
+        "normal": "thsarabunnew_normal_17eaec375be47132c56fafcd947b1d60"
+    }
+}

@@ -1,0 +1,12 @@
+services:
+  laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-mssql
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8000:8000"
+

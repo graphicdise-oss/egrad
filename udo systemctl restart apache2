@@ -1,0 +1,25 @@
+[0;1;32m●[0m apache2.service - The Apache HTTP Server
+     Loaded: loaded (]8;;file://egrad/usr/lib/systemd/system/apache2.service/usr/lib/systemd/system/apache2.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Sat 2025-09-20 00:52:07 +07; 10h ago
+       Docs: ]8;;https://httpd.apache.org/docs/2.4/https://httpd.apache.org/docs/2.4/]8;;
+   Main PID: 274931 (apache2)
+      Tasks: 39 (limit: 9393)
+     Memory: 143.6M (peak: 171.5M)
+        CPU: 14.169s
+     CGroup: /system.slice/apache2.service
+             ├─[0;38;5;245m274931 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m274933 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m274934 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m274935 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m274936 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m274937 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m274938 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m275933 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m276096 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m276391 /usr/sbin/apache2 -k start[0m
+             ├─[0;38;5;245m276648 /usr/sbin/apache2 -k start[0m
+             └─[0;38;5;245m277020 /usr/sbin/apache2 -k start[0m
+
+Sep 20 00:52:07 egrad systemd[1]: Starting apache2.service - The Apache HTTP Server...
+Sep 20 00:52:07 egrad apachectl[274930]: AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+Sep 20 00:52:07 egrad systemd[1]: Started apache2.service - The Apache HTTP Server.

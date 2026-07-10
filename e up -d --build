@@ -1,0 +1,22 @@
+[0;1;32m●[0m docker.service - Docker Application Container Engine
+     Loaded: loaded (]8;;file://egrad/usr/lib/systemd/system/docker.service/usr/lib/systemd/system/docker.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)
+     Active: [0;1;32mactive (running)[0m since Sat 2025-09-20 02:38:45 +07; 19s ago
+TriggeredBy: [0;1;32m●[0m docker.socket
+       Docs: ]8;;https://docs.docker.comhttps://docs.docker.com]8;;
+   Main PID: 282234 (dockerd)
+      Tasks: 9
+     Memory: 21.2M (peak: 21.6M)
+        CPU: 237ms
+     CGroup: /system.slice/docker.service
+             └─[0;38;5;245m282234 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock[0m
+
+Sep 20 02:38:44 egrad dockerd[282234]: time="2025-09-20T02:38:44.667572253+07:00" level=info msg="[graphdriver] using prior storage driver: overlay2"
+Sep 20 02:38:44 egrad dockerd[282234]: time="2025-09-20T02:38:44.667769743+07:00" level=info msg="Loading containers: start."
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.040529208+07:00" level=warning msg="Error (Unable to complete atomic operation, key modified) deleting object [endpoint_count 59e0d7b8724912f918436fdbb32cd459ef19faa4c5f46fb7ef92932d8277e2bf], retrying...."
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.066159480+07:00" level=info msg="Loading containers: done."
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.082114273+07:00" level=info msg="Docker daemon" commit=249d679 containerd-snapshotter=false storage-driver=overlay2 version=28.4.0
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.082151799+07:00" level=info msg="Initializing buildkit"
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.084441972+07:00" level=info msg="Completed buildkit initialization"
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.087229427+07:00" level=info msg="Daemon has completed initialization"
+Sep 20 02:38:45 egrad dockerd[282234]: time="2025-09-20T02:38:45.087305689+07:00" level=info msg="API listen on /run/docker.sock"
+Sep 20 02:38:45 egrad systemd[1]: Started docker.service - Docker Application Container Engine.
