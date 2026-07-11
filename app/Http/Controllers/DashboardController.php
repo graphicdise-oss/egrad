@@ -38,13 +38,13 @@ class DashboardController extends Controller
             ->table('Ve_studentbunditfinan')
             ->select('id_no', 'term', 'detail', 'namelevel', 'namelevel_full', 'status_name')
             ->whereNotNull('term')
-            ->where('status_name', 'เรียนยังไม่ครบหลักสูตร')
             ->get();
 
         // --- Clean Data & คำนวณปี ---
         $cleanedData = $rawQuery->map(function ($row) {
             $row->detail = trim($row->detail);
             $row->namelevel_full = trim($row->namelevel_full);
+            $row->status_name = trim($row->status_name);
 
             $term = trim($row->term);
             $year = null;
@@ -60,8 +60,20 @@ class DashboardController extends Controller
             return $row;
         });
 
-        // ⭐ ข้อมูลตั้งต้น (นับเฉพาะปีแรกของแต่ละคน) ⭐
-        $masterData = $cleanedData->sortBy('year')->unique('id_no')->values();
+        // ⭐ เช็คสถานะ "ล่าสุด" ของนักศึกษาแต่ละคน เก็บเฉพาะคนที่ปัจจุบันยังเรียนไม่จบ ⭐
+        // (เดิมกรองจากแถวแรกสุด ทำให้คนที่จบไปแล้วยังถูกนับว่า "คงอยู่")
+        $currentlyActiveIds = $cleanedData
+            ->sortByDesc('year')
+            ->unique('id_no')
+            ->where('status_name', 'เรียนยังไม่ครบหลักสูตร')
+            ->pluck('id_no');
+
+        // ⭐ ข้อมูลตั้งต้น (ปีแรกที่เข้าเรียน เฉพาะคนที่ยังเรียนไม่จบจริงในปัจจุบัน) ⭐
+        $masterData = $cleanedData
+            ->whereIn('id_no', $currentlyActiveIds)
+            ->sortBy('year')
+            ->unique('id_no')
+            ->values();
 
         // --- เตรียมตัวเลือก Dropdown อื่นๆ ---
         // (ตัวแปร $levels สร้างไปแล้วข้างบน ไม่ต้องสร้างซ้ำ)
