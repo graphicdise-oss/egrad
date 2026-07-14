@@ -93,6 +93,10 @@
                     </option>
                     <option value="2/2568" {{ request('term_year') == '2/2568' ? 'selected' : '' }}>ภาคการศึกษาที่ 2/2568
                     </option>
+                    <option value="1/2569" {{ request('term_year') == '1/2569' ? 'selected' : '' }}>ภาคการศึกษาที่ 1/2569
+                    </option>
+                    <option value="2/2569" {{ request('term_year') == '2/2569' ? 'selected' : '' }}>ภาคการศึกษาที่ 2/2569
+                    </option>
                     <option value="2569" {{ request('term_year') == '2569' ? 'selected' : '' }}>ปีการศึกษา 2569</option>
                 </select>
             </div>
