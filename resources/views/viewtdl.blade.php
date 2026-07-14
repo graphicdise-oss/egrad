@@ -125,7 +125,7 @@
                     <th style="width: 90px;">เบอร์โทร</th>
                     <th style="width: 120px;">โรงเรียน</th>
                     <th style="width: 70px;">ระดับ</th>
-                    <th style="width: 65px;">ปีการศึกษา</th>
+                    <th style="width: 65px;">ภาค/ปีการศึกษา</th>
                     <th style="width: 110px;">สาขาเรียน</th>
                     <th style="width: 45px;">เกรด</th>
                     <th style="width: 85px;">ค่าสมัคร</th>
@@ -148,7 +148,7 @@
                         <td><small>{{ $s->telephone }}</small></td>
                         <td class="text-left"><small>{{ $s->place_sch }}</small></td>
                         <td><small>{{ $s->educationan_sch }}</small></td>
-                        <td>{{ $s->year_register }}</td>
+                        <td>{{ trim($s->year_nameid) }}/{{ $s->year_register }}</td>
                         <td class="text-left"><small>{{ $s->branch_sch }}</small></td>
                         <td><strong>{{ number_format($s->grade_sch, 2) }}</strong></td>
 
