@@ -224,6 +224,7 @@ Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.
 
 // แบบฟอร์มสมัคร
 Route::get('/apply/form', [ApplyController::class, 'create'])->name('apply.form');
+Route::get('/apply/form/teacher', [ApplyController::class, 'createTeacher'])->name('apply.form.teacher');
 Route::post('/apply/store', [ApplyController::class, 'store'])->name('apply.store');
 
 

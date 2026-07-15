@@ -147,9 +147,12 @@
                     <select id="master_status_id" name="master_status_id" class="form-select"
                         onchange="updateCourses()">
                         <option value="">@lang('form.select')</option>
-                        <option value="2">@lang('form.ปริญญาโท')</option>
-                        <option value="3">@lang('form.ปริญญาเอก')</option>
-                        <option value="4">@lang('form.ประกาศนียบัตรบัณฑิต')</option>
+                        @if($formType === 'teacher')
+                            <option value="4">@lang('form.ประกาศนียบัตรบัณฑิต')</option>
+                        @else
+                            <option value="2">@lang('form.ปริญญาโท')</option>
+                            <option value="3">@lang('form.ปริญญาเอก')</option>
+                        @endif
                     </select>
                 </div>
 
@@ -180,39 +183,41 @@
             <script>
                 // จัดกลุ่มข้อมูลตาม value ของระดับปริญญา (2=โท, 3=เอก, 4=ป.บัณฑิต)
                 const courseData = {
-                    // --- ปริญญาโท (Value 2) ---
-                    "2": [
-                        { id: "70006", degree: "ปริญญาโท", name: "การจัดการเทคโนโลยี (Technology Management)" },
-                        { id: "70007", degree: "ปริญญาโท", name: "การจัดการระบบสุขภาพ (Health System Management)" },
-                        { id: "70005", degree: "ปริญญาโท", name: "นวัตกรรมการจัดการสิ่งแวดล้อม (Innovation of Environmental Management)" },
-                        { id: "70009", degree: "ปริญญาโท", name: "รัฐประศาสนศาสตร์ (Public Administration)" },
-                        { id: "70010", degree: "ปริญญาโท", name: "นวัตกรรมการบริหารปกครอง และการประกอบการเพื่อสังคม" },
-                        { id: "70014", degree: "ปริญญาโท", name: "การจัดการปกครอง (Governance)" },
-                        { id: "70011", degree: "ปริญญาโท", name: "ทัศนศิลป์และการออกแบบ (Visual Arts and Design)" },
-                        { id: "70015", degree: "ปริญญาโท", name: "การจัดการธุรกิจ (Business Management)" },
-                        { id: "70001", degree: "ปริญญาโท", name: "หลักสูตรและการสอน (Curriculum and Instruction)" },
-                        { id: "70008", degree: "ปริญญาโท", name: "นวัตกรรมการบริหารการศึกษา (Educational Administrative Innovation)" },
-                        { id: "70016", degree: "ปริญญาโท", name: "วิทยาศาสตร์การกีฬา" },
-                    ],
+                    @if($formType === 'teacher')
+                        // --- ประกาศนียบัตรบัณฑิต (Value 4) ---
+                        "4": [
+                            { id: "72001", degree: "ประกาศนียบัตรบัณฑิต", name: "หลักสูตรประกาศนียบัตรบัณฑิต สาขาวิชาชีพครู" }
+                        ]
+                    @else
+                        // --- ปริญญาโท (Value 2) ---
+                        "2": [
+                            { id: "70006", degree: "ปริญญาโท", name: "การจัดการเทคโนโลยี (Technology Management)" },
+                            { id: "70007", degree: "ปริญญาโท", name: "การจัดการระบบสุขภาพ (Health System Management)" },
+                            { id: "70005", degree: "ปริญญาโท", name: "นวัตกรรมการจัดการสิ่งแวดล้อม (Innovation of Environmental Management)" },
+                            { id: "70009", degree: "ปริญญาโท", name: "รัฐประศาสนศาสตร์ (Public Administration)" },
+                            { id: "70010", degree: "ปริญญาโท", name: "นวัตกรรมการบริหารปกครอง และการประกอบการเพื่อสังคม" },
+                            { id: "70014", degree: "ปริญญาโท", name: "การจัดการปกครอง (Governance)" },
+                            { id: "70011", degree: "ปริญญาโท", name: "ทัศนศิลป์และการออกแบบ (Visual Arts and Design)" },
+                            { id: "70015", degree: "ปริญญาโท", name: "การจัดการธุรกิจ (Business Management)" },
+                            { id: "70001", degree: "ปริญญาโท", name: "หลักสูตรและการสอน (Curriculum and Instruction)" },
+                            { id: "70008", degree: "ปริญญาโท", name: "นวัตกรรมการบริหารการศึกษา (Educational Administrative Innovation)" },
+                            { id: "70016", degree: "ปริญญาโท", name: "วิทยาศาสตร์การกีฬา" },
+                        ],
 
-                    // --- ปริญญาเอก (Value 3) แยกออกมาให้ชัดเจน ---
-                    "3": [
-                        { id: "71005", degree: "ปริญญาเอก", name: "หลักสูตรและการสอน (Curriculum and Instruction)" },
-                        { id: "71004", degree: "ปริญญาเอก", name: "นวัตกรรมการบริหารการศึกษา (Educational Administrative Innovation)" },
-                        { id: "71006", degree: "ปริญญาเอก", name: "การจัดการระบบสุขภาพ (Health System Management)" },
-                        { id: "71003", degree: "ปริญญาเอก", name: "สิ่งแวดล้อมศึกษา (Environmental Studies)" },
-                        { id: "71009", degree: "ปริญญาเอก", name: "นวัตกรรมการจัดการสิ่งแวดล้อม (Innovation of Environmental Management)" },
-                        { id: "71007", degree: "ปริญญาเอก", name: "นวัตกรรมเพื่อการพัฒนาที่ยั่งยืน (Innovation for Sustainable Development)" },
-                        { id: "71008", degree: "ปริญญาเอก", name: "ทัศนศิลป์และการออกแบบ (Visual Arts and Design)" },
-                        { id: "71001", degree: "ปริญญาเอก", name: "การบริหารธุรกิจ (Business Administration)" },
-                        { id: "71011", degree: "ปริญญาเอก", name: "การจัดการธุรกิจ (Business Management)" },
-                        { id: "71012", degree: "ปริญญาเอก", name: "วิทยาศาสตร์การกีฬา" },
-                    ],
-
-                    // --- ประกาศนียบัตรบัณฑิต (Value 4) ---
-                    "4": [
-                        { id: "72001", degree: "ประกาศนียบัตรบัณฑิต", name: "หลักสูตรประกาศนียบัตรบัณฑิต สาขาวิชาชีพครู" }
-                    ]
+                        // --- ปริญญาเอก (Value 3) แยกออกมาให้ชัดเจน ---
+                        "3": [
+                            { id: "71005", degree: "ปริญญาเอก", name: "หลักสูตรและการสอน (Curriculum and Instruction)" },
+                            { id: "71004", degree: "ปริญญาเอก", name: "นวัตกรรมการบริหารการศึกษา (Educational Administrative Innovation)" },
+                            { id: "71006", degree: "ปริญญาเอก", name: "การจัดการระบบสุขภาพ (Health System Management)" },
+                            { id: "71003", degree: "ปริญญาเอก", name: "สิ่งแวดล้อมศึกษา (Environmental Studies)" },
+                            { id: "71009", degree: "ปริญญาเอก", name: "นวัตกรรมการจัดการสิ่งแวดล้อม (Innovation of Environmental Management)" },
+                            { id: "71007", degree: "ปริญญาเอก", name: "นวัตกรรมเพื่อการพัฒนาที่ยั่งยืน (Innovation for Sustainable Development)" },
+                            { id: "71008", degree: "ปริญญาเอก", name: "ทัศนศิลป์และการออกแบบ (Visual Arts and Design)" },
+                            { id: "71001", degree: "ปริญญาเอก", name: "การบริหารธุรกิจ (Business Administration)" },
+                            { id: "71011", degree: "ปริญญาเอก", name: "การจัดการธุรกิจ (Business Management)" },
+                            { id: "71012", degree: "ปริญญาเอก", name: "วิทยาศาสตร์การกีฬา" },
+                        ]
+                    @endif
                 };
 
                 function updateCourses() {

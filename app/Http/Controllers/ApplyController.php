@@ -53,7 +53,18 @@ class ApplyController extends Controller
     {
         \App::setLocale(\Session::get('locale', config('app.locale')));
 
-        return view('apply.form');
+        return view('apply.form', ['formType' => 'grad']);
+    }
+
+    /**
+     * แสดงฟอร์มสมัครเรียนสำหรับสาขาวิชาชีพครูโดยเฉพาะ
+     * หน้าตาเหมือนฟอร์มสมัคร โท-เอก แต่จำกัดตัวเลือกระดับปริญญาให้เหลือแค่วิชาชีพครู
+     */
+    public function createTeacher()
+    {
+        \App::setLocale(\Session::get('locale', config('app.locale')));
+
+        return view('apply.form', ['formType' => 'teacher']);
     }
 
 
