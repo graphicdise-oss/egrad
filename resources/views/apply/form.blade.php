@@ -58,6 +58,88 @@
     }
 </style>
 
+{{-- ✅ ปรับความสวยงามของฟอร์ม (ดีไซน์เท่านั้น ไม่แตะ field/name/logic เดิม) --}}
+<style>
+    body {
+        background: linear-gradient(160deg, #fff5fb 0%, #fdf2f8 40%, #f8fafc 100%);
+    }
+
+    .navbar {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .container.mt-4 {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 32px 40px 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 35px rgba(250, 46, 178, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .container.mt-4 h2[style*="34px"] {
+        color: #d6127a;
+        border-bottom: 3px solid #ffd6ec;
+        padding-bottom: 12px;
+    }
+
+    .container.mt-4 h2.fw-bold {
+        color: #d6127a;
+    }
+
+    label,
+    .form-label {
+        font-weight: 700;
+        color: #6b2149;
+        margin-bottom: 6px;
+    }
+
+    input.form-control,
+    select.form-select {
+        border-radius: 12px !important;
+        padding: 10px 14px;
+        background-color: #fffafd;
+        transition: box-shadow .15s ease, border-color .15s ease;
+    }
+
+    input.form-control:focus,
+    select.form-select:focus {
+        border-color: #fa2eb2 !important;
+        box-shadow: 0 0 0 4px rgba(250, 46, 178, 0.15);
+    }
+
+    input[type="file"].form-control {
+        padding: 8px 14px;
+    }
+
+    .form-check-input {
+        width: 1.3em;
+        height: 1.3em;
+        accent-color: #fa2eb2;
+    }
+
+    button[type="submit"] {
+        background: linear-gradient(135deg, #ff77d0, #fa2eb2);
+        border: none;
+        border-radius: 999px;
+        padding: 12px 48px;
+        font-weight: 700;
+        box-shadow: 0 8px 20px rgba(250, 46, 178, 0.35);
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    button[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(250, 46, 178, 0.45);
+    }
+
+    @media (max-width: 767px) {
+        .container.mt-4 {
+            padding: 24px 20px 28px;
+            border-radius: 16px;
+        }
+    }
+</style>
+
 
 <body class="bg-gray-100 min-h-screen fc-font">
     <!-- ส่วน Header VRU อยู่บนสุด -->
