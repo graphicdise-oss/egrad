@@ -123,7 +123,7 @@
                     <th style="width: 150px;">ชื่อ-นามสกุล</th>
                     <th style="width: 90px;">IDline</th>
                     <th style="width: 90px;">เบอร์โทร</th>
-                    <th style="width: 120px;">โรงเรียน</th>
+                    <th style="width: 120px;">ปริญญา</th>
                     <th style="width: 70px;">ระดับ</th>
                     <th style="width: 65px;">ภาค/ปีการศึกษา</th>
                     <th style="width: 110px;">สาขาเรียน</th>
@@ -146,7 +146,10 @@
                         </td>
                         <td class="text-left"><small>{{ $s->email }}</small></td>
                         <td><small>{{ $s->telephone }}</small></td>
-                        <td class="text-left"><small>{{ $s->place_sch }}</small></td>
+                        <td class="text-left"
+                            title="{{ $hardcoded_majors[trim($s->branch_one)] ?? $s->branch_one }}">
+                            <small>{{ $hardcoded_majors[trim($s->branch_one)] ?? $s->branch_one }}</small>
+                        </td>
                         <td><small>{{ $s->educationan_sch }}</small></td>
                         <td>{{ trim($s->year_nameid) }}/{{ $s->year_register }}</td>
                         <td class="text-left"><small>{{ $s->branch_sch }}</small></td>
