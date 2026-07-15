@@ -160,8 +160,12 @@
                     <label>@lang('form.ภาคเรียน/ปี')</label>
                     <select id="term" name="year_nameid" class="form-select" onchange="updateYearRegister(this)">
                         <option value="">@lang('form.select')</option>
-                        <option value="1" data-year="2569">1/2569</option>
-                        <option value="2" data-year="2569">2/2569</option>
+                        @if($formType === 'teacher')
+                            <option value="3" data-year="2569">2569</option>
+                        @else
+                            <option value="1" data-year="2569">1/2569</option>
+                            <option value="2" data-year="2569">2/2569</option>
+                        @endif
                     </select>
                     <input type="hidden" name="year_register" id="year_register">
                 </div>
