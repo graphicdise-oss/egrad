@@ -76,6 +76,18 @@
         opacity: .75;
     }
 
+    .lang-flag-link {
+        display: inline-block;
+        outline: none;
+    }
+
+    .lang-flag-link:focus,
+    .lang-flag-link:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
+        border-radius: 6px;
+    }
+
     .container.mt-4 {
         background: #ffffff;
         border-radius: 24px;
@@ -174,16 +186,16 @@
 
                 {{-- แถบเปลี่ยนภาษา (อยู่กึ่งกลางใต้เมนู) --}}
                 <div class="mt-1 flex items-center justify-center space-x-2">
-                    <a href="{{ route('lang.switch', 'th') }}">
-                        <img src="{{ asset('images/th.jpg') }}" width="25" alt="TH"
+                    <a href="{{ route('lang.switch', 'th') }}" class="lang-flag-link">
+                        <img src="{{ asset('images/th.jpg') }}" width="38" alt="TH"
                             class="rounded shadow-sm hover:scale-110 transition">
                     </a>
-                    <a href="{{ route('lang.switch', 'en') }}">
-                        <img src="{{ asset('images/en.jpg') }}" width="25" alt="EN"
+                    <a href="{{ route('lang.switch', 'en') }}" class="lang-flag-link">
+                        <img src="{{ asset('images/en.jpg') }}" width="38" alt="EN"
                             class="rounded shadow-sm hover:scale-110 transition">
                     </a>
-                    <a href="{{ route('lang.switch', 'zh') }}">
-                        <img src="{{ asset('images/zh.jpg') }}" width="25" alt="ZH"
+                    <a href="{{ route('lang.switch', 'zh') }}" class="lang-flag-link">
+                        <img src="{{ asset('images/zh.jpg') }}" width="38" alt="ZH"
                             class="rounded shadow-sm hover:scale-110 transition">
                     </a>
                 </div>
