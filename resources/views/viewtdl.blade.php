@@ -151,7 +151,19 @@
                             <small>{{ $hardcoded_majors[trim($s->branch_one)] ?? $s->branch_one }}</small>
                         </td>
                         <td><small>{{ $s->educationan_sch }}</small></td>
-                        <td>{{ trim($s->year_nameid) }}/{{ $s->year_register }}</td>
+                        <td>
+                            @php
+                                // เฉพาะสาขาวิชาชีพครู (72001) ข้อมูล year_nameid ในฐานยังไม่ถูกต้อง
+                                // (เก็บเป็น 3 ทั้งหมด) จึงคำนวณเทอมจากวันที่สมัครแทนไปก่อน:
+                                // สมัครหลัง 13/5/2569 = เทอม 2, ก่อนหน้านั้น = เทอม 1
+                                $termDisplay = trim($s->year_nameid);
+                                if (trim($s->branch_one) === '72001') {
+                                    $applyDate = substr($s->insert_datetime, 0, 10);
+                                    $termDisplay = $applyDate > '2026-05-13' ? '2' : '1';
+                                }
+                            @endphp
+                            {{ $termDisplay }}/{{ $s->year_register }}
+                        </td>
                         <td class="text-left"><small>{{ $s->branch_sch }}</small></td>
                         <td><strong>{{ number_format($s->grade_sch, 2) }}</strong></td>
 
