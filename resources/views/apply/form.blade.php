@@ -65,7 +65,15 @@
     }
 
     .navbar {
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 4px 14px rgba(250, 46, 178, 0.2);
+    }
+
+    .navbar .nav-link {
+        transition: opacity .15s ease;
+    }
+
+    .navbar .nav-link:hover {
+        opacity: .75;
     }
 
     .container.mt-4 {
@@ -143,13 +151,13 @@
 
 <body class="bg-gray-100 min-h-screen fc-font">
     <!-- ส่วน Header VRU อยู่บนสุด -->
-    <nav class="navbar border-bottom" style="background-color: #ff77d0;">
+    <nav class="navbar py-3" style="background: linear-gradient(135deg, #ff8fd6, #fa2eb2);">
 
         <div class="container d-flex justify-content-between align-items-center">
             <!-- โลโก้ -->
             <div class="d-flex align-items-center">
                 <img src="{{ asset('images/apply/logoapply.jpg') }}" alt="VRU Logo"
-                    style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white;" />
+                    style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
 
 
             </div>
@@ -157,10 +165,10 @@
             <div class="d-flex flex-column align-items-center text-end">
                 <div class="d-flex align-items-center">
                     <a href="https://oldent.vru.ac.th/Webregister/pages/login_Admin.php"
-                        class="nav-link text-dark fw-bold">@lang('form.login')</a>
-                    <span class="text-dark mx-2 fw-bold">|</span>
+                        class="nav-link text-white fw-bold">@lang('form.login')</a>
+                    <span class="text-white mx-2 fw-bold opacity-75">|</span>
                     <a href="https://oldent.vru.ac.th/Webregister/pages/login_Admin.php"
-                        class="nav-link text-dark fw-bold">@lang('form.logout')</a>
+                        class="nav-link text-white fw-bold">@lang('form.logout')</a>
                 </div>
 
 
