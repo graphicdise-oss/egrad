@@ -36,8 +36,8 @@
         width: 165px;
         flex-shrink: 0;
         overflow: hidden;
-        background: linear-gradient(180deg, #1f9146, #156a34) !important;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(180deg, #ff8fd6, #fa2eb2) !important;
+        box-shadow: 2px 0 10px rgba(250, 46, 178, 0.2);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -68,8 +68,8 @@
     .sidebar .nav-link {
         color: #ffffff;
         border-radius: 8px;
-        padding: 10px 12px;
-        font-size: 1.1rem;
+        padding: 12px 12px;
+        font-size: 1.3rem;
         font-weight: 700;
     }
 
@@ -90,9 +90,9 @@
 
     .sidebar .submenu .nav-link {
         color: #ffffff;
-        font-size: 1rem;
+        font-size: 1.15rem;
         font-weight: 400;
-        padding: 8px 12px;
+        padding: 10px 12px;
     }
 
     .sidebar .caret {
