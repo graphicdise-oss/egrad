@@ -162,118 +162,37 @@
             <a class="navbar-brand text-white fw-bold mb-3" href="#">VRU Apply</a>
 
             <ul class="nav flex-column">
+                {{-- ข้อมูลนักศึกษา (ลิงก์มาหน้าตารางเอกสารการสมัครที่มีอยู่) --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="https://oldent.vru.ac.th/Webregister/pages/home_admin.php">หน้าแรก</a>
+                    <a class="nav-link" href="{{ route('apply.docs.index') }}">ข้อมูลนักศึกษา</a>
                 </li>
             </ul>
 
             <hr class="text-white-50 my-2">
 
             <ul class="nav flex-column">
-                {{-- จันทร์-ศุกร์ --}}
+                {{-- การจัดการ --}}
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#menuMonFri"
+                    <a class="nav-link d-flex justify-content-between align-items-center" href="#menuManage"
                         data-bs-toggle="collapse" role="button" aria-expanded="false">
-                        จันทร์-ศุกร์ <span class="caret">▾</span>
+                        การจัดการ <span class="caret">▾</span>
                     </a>
-                    <div class="collapse submenu ps-3" id="menuMonFri">
+                    <div class="collapse submenu ps-3" id="menuManage">
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/view_Admin_tbl_vru_1.php">ข้อมูลการสมัคร</a>
+                            {{-- พิมพ์ใบค่าธรรมเนียม --}}
+                            <li class="nav-item">
+                                <a class="nav-link d-flex justify-content-between align-items-center"
+                                    href="#menuFeeSlip" data-bs-toggle="collapse" role="button"
+                                    aria-expanded="false">
+                                    พิมพ์ใบค่าธรรมเนียม <span class="caret">▾</span>
+                                </a>
+                                <div class="collapse submenu ps-3" id="menuFeeSlip">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a class="nav-link" href="#">โท-เอก</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#">วิชาชีพครู</a></li>
+                                    </ul>
+                                </div>
                             </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/view_Admin_tbl_vru_1_payment.php">ผู้มีสิทธิ์เข้าศึกษา</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/view_Admin_report_paper_portfolio_nm.php">เอกสารการสมัคร</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/view_Admin_report_paper_portfolio_history_nm.php">ข้อมูลผู้สมัคร
-                                    Profile</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-                {{-- เสาร์อาทิตย์ --}}
-                <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#menuSatSun"
-                        data-bs-toggle="collapse" role="button" aria-expanded="false">
-                        เสาร์อาทิตย์ <span class="caret">▾</span>
-                    </a>
-                    <div class="collapse submenu ps-3" id="menuSatSun">
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_bachelor_register_grpup.php">ข้อมูลการสมัคร</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_bachelor_payment.php">ผู้มีสิทธิ์เข้าศึกษา</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/view_Admin_report_paper_portfolio_bch.php">เอกสารการสมัคร</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                {{-- บัณฑิต/วิชาชีพครู --}}
-                <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#menuMaster"
-                        data-bs-toggle="collapse" role="button" aria-expanded="false">
-                        บัณฑิต/วิชาชีพครู <span class="caret">▾</span>
-                    </a>
-                    <div class="collapse submenu ps-3" id="menuMaster">
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_master_register.php">ข้อมูลการสมัคร</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_master_payment.php">ผู้มีสิทธิ์เข้าศึกษา</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="https://egrad.vru.ac.th/apply-docs">เอกสารการสมัคร</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/view_Admin_regisSearch_mt.php">ค้นหาประวัติผู้สมัคร</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                {{-- สัมฤทธิบัตร --}}
-                <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#menuAcm"
-                        data-bs-toggle="collapse" role="button" aria-expanded="false">
-                        สัมฤทธิบัตร <span class="caret">▾</span>
-                    </a>
-                    <div class="collapse submenu ps-3" id="menuAcm">
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_acm_register.php">ข้อมูลการสมัคร</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_acm_register_type.php">ข้อมูลผู้สมัครเเยกประเภท</a>
-                            </li>
-                            <li class="nav-item"><a class="nav-link"
-                                    href="https://oldent.vru.ac.th/Webregister/pages/View_Admin_tbl_acm_payment.php">ข้อมูลการชำระเงิน</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-                {{-- ข้อมูลการสมัคร (เมนูย่อยเดิม) --}}
-                <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" href="#menuApply"
-                        data-bs-toggle="collapse" role="button" aria-expanded="false">
-                        ข้อมูลการสมัคร <span class="caret">▾</span>
-                    </a>
-                    <div class="collapse submenu ps-3" id="menuApply">
-                        <ul class="nav flex-column">
-                            <li class="px-2 pt-1"><small class="text-white-50 text-uppercase">เมนูย่อย</small></li>
-                            <li class="nav-item"><a class="nav-link" href="#">ใบสมัครโท-เอก</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">ข้อมูลผู้สมัครแยกประเภท</a></li>
-                            <li>
-                                <hr class="text-white-50 my-1">
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="#">รายการอื่น ๆ</a></li>
                         </ul>
                     </div>
                 </li>
