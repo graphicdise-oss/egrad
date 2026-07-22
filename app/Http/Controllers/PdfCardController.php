@@ -49,16 +49,17 @@ class PdfCardController extends Controller
         abort_unless($student, 404, 'ไม่พบข้อมูลผู้สมัคร');
 
         $branchOne = trim($student->branch_one);
+        $masterStatusId = (int) trim($student->master_status_id);
 
-        if ($branchOne === '72001') {
-            $degree = 'teacher';
-        } elseif (str_starts_with($branchOne, '70')) {
-            $degree = 'master';
-        } elseif (str_starts_with($branchOne, '71')) {
-            $degree = 'doctor';
-        } else {
-            abort(404, 'ไม่พบข้อมูลหลักสูตรของผู้สมัครรายนี้');
-        }
+        $degreeByStatusId = [
+            2 => 'master',
+            3 => 'doctor',
+            4 => 'teacher',
+        ];
+
+        abort_unless(isset($degreeByStatusId[$masterStatusId]), 404, 'ไม่พบข้อมูลหลักสูตรของผู้สมัครรายนี้');
+
+        $degree = $degreeByStatusId[$masterStatusId];
 
         if ($degree === 'teacher') {
             // ข้อมูล year_nameid ของสาขาวิชาชีพครูในฐานยังไม่ถูกต้อง (เก็บเป็น 3 ทั้งหมด)

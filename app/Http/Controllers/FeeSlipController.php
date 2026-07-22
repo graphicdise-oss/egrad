@@ -59,12 +59,9 @@ class FeeSlipController extends Controller
                 });
 
             if ($scope === 'teacher') {
-                $query->whereRaw("LTRIM(RTRIM(branch_one)) = ?", ['72001']);
+                $query->whereRaw('LTRIM(RTRIM(master_status_id)) = ?', ['4']);
             } else {
-                $query->where(function ($q) {
-                    $q->whereRaw("LTRIM(RTRIM(branch_one)) LIKE '70%'")
-                        ->orWhereRaw("LTRIM(RTRIM(branch_one)) LIKE '71%'");
-                });
+                $query->whereRaw('LTRIM(RTRIM(master_status_id)) IN (?, ?)', ['2', '3']);
             }
 
             $student = $query->first();
