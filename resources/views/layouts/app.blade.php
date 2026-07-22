@@ -28,28 +28,31 @@
     }
 
     .app-layout {
+        display: flex;
         min-height: 100vh;
     }
 
     .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
         width: 165px;
-        overflow-y: auto;
+        flex-shrink: 0;
+        overflow: hidden;
         background: linear-gradient(180deg, #1f9146, #156a34) !important;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        transform: translateX(-100%);
-        transition: transform .25s ease;
-        z-index: 1040;
+        transition: width .25s ease, padding .25s ease;
     }
 
-    .sidebar.sidebar-open {
-        transform: translateX(0);
+    .sidebar.sidebar-closed {
+        width: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .sidebar.sidebar-closed .nav-link,
+    .sidebar.sidebar-closed .navbar-brand {
+        white-space: nowrap;
     }
 
     .sidebar .navbar-brand {
@@ -102,7 +105,8 @@
     }
 
     .app-content {
-        width: 100%;
+        flex-grow: 1;
+        min-width: 0;
     }
 
     /* ปุ่มเปิด/ปิดเมนู ติดอยู่ที่ขอบบนซ้ายสุดพอดี (ไม่มีช่องว่าง) */
@@ -116,9 +120,19 @@
     }
 
     @media (max-width: 767px) {
+        .app-layout {
+            flex-direction: column;
+        }
+
         .sidebar {
-            width: 80%;
-            max-width: 260px;
+            width: 100%;
+        }
+
+        .sidebar.sidebar-closed {
+            width: 100% !important;
+            height: 0;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
         }
     }
 
@@ -144,7 +158,7 @@
 
     <div class="app-layout">
         {{-- เมนูด้านซ้าย --}}
-        <nav class="sidebar sidebar-open bg-success text-white p-2" id="sidebarMenu">
+        <nav class="sidebar bg-success text-white p-2" id="sidebarMenu">
             <a class="navbar-brand text-white fw-bold mb-3" href="#">VRU Apply</a>
 
             <ul class="nav flex-column">
@@ -277,7 +291,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
-            document.getElementById('sidebarMenu').classList.toggle('sidebar-open');
+            document.getElementById('sidebarMenu').classList.toggle('sidebar-closed');
         });
     </script>
 </body>
