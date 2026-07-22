@@ -95,8 +95,14 @@
         min-width: 0;
     }
 
-    .mobile-topbar {
-        display: none;
+    /* ปุ่มเปิด/ปิดเมนู ลอยไว้มุมซ้ายบน ใช้ได้ทั้งจอใหญ่/จอเล็ก */
+    .sidebar-toggle-btn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1050;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     @media (max-width: 767px) {
@@ -106,14 +112,6 @@
 
         .sidebar {
             width: 100%;
-        }
-
-        .sidebar.collapse:not(.show) {
-            display: none;
-        }
-
-        .mobile-topbar {
-            display: flex;
         }
     }
 
@@ -133,19 +131,14 @@
 </style>
 
 <body>
-    {{-- แถบบนสำหรับมือถือ: ปุ่มเปิด/ปิดเมนู --}}
-    <div class="mobile-topbar bg-success text-white align-items-center justify-content-between p-2">
-        <span class="fw-bold ps-2">VRU Apply</span>
-        <button class="btn btn-sm btn-light me-2" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu">
-            ☰ เมนู
-        </button>
-    </div>
+    {{-- ปุ่มเปิด/ปิดเมนู (ลอยอยู่มุมซ้ายบนตลอด ใช้ได้ทั้งจอใหญ่/จอเล็ก) --}}
+    <button id="sidebarToggleBtn" class="btn btn-success btn-sm sidebar-toggle-btn" type="button"
+        title="เปิด/ปิดเมนู">☰</button>
 
     <div class="app-layout">
         {{-- เมนูด้านซ้าย --}}
-        <nav class="sidebar collapse d-md-block bg-success text-white p-2" id="sidebarMenu">
-            <a class="navbar-brand text-white fw-bold d-none d-md-block mb-3" href="#">VRU Apply</a>
+        <nav class="sidebar bg-success text-white p-2" id="sidebarMenu">
+            <a class="navbar-brand text-white fw-bold mb-3" href="#">VRU Apply</a>
 
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -275,6 +268,11 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
+            document.getElementById('sidebarMenu').classList.toggle('d-none');
+        });
+    </script>
 </body>
 
 </html>
