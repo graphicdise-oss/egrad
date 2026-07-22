@@ -33,11 +33,11 @@
     }
 
     .sidebar {
-        width: 165px;
+        width: 190px;
         flex-shrink: 0;
         overflow: hidden;
-        background: linear-gradient(180deg, #ff8fd6, #fa2eb2) !important;
-        box-shadow: 2px 0 10px rgba(250, 46, 178, 0.2);
+        background: linear-gradient(180deg, #1f9146, #156a34) !important;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
