@@ -176,7 +176,7 @@
                     <th style="width: 30px;">ลำดับ</th>
                     <th style="width: 60px;">รหัสสมัคร</th>
                     <th style="width: 90px;">บัตรประชาชน</th>
-                    <th style="width: 105px;">ชื่อ-นามสกุล</th>
+                    <th style="width: 88px;">ชื่อ-นามสกุล</th>
                     <th style="width: 60px;">IDline</th>
                     <th style="width: 60px;">เบอร์โทร</th>
                     <th style="width: 100px;">ปริญญา</th>
@@ -186,7 +186,7 @@
                     <th style="width: 40px;">เกรด</th>
                     <th style="width: 70px;">ค่าสมัคร</th>
                     <th style="width: 70px;">ค่าลงทะเบียน</th>
-                    <th style="width: 85px;">สถานะ</th>
+                    <th style="width: 68px;">สถานะ</th>
                     <th style="width: 60px;">เอกสาร</th>
                     <th style="width: 65px;">สมัคร</th>
                 </tr>
