@@ -21,6 +21,7 @@ use App\Http\Controllers\LoginApplyController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\PdfCardController;
 use App\Http\Controllers\PdfCardSettingController;
+use App\Http\Controllers\FeeSlipController;
 
 
 Route::get('/apply-docs', [ApplyDocController::class, 'index'])
@@ -39,6 +40,11 @@ Route::put('/pdf-settings/{degree}/{term}', [PdfCardSettingController::class, 'u
 // พิมพ์บัตรประจำตัวผู้สมัคร (PDF)
 Route::get('/pdf-card/{name_id}', [PdfCardController::class, 'show'])
     ->name('pdfcard.show');
+
+// ค้นหาผู้สมัครด้วยเลขบัตรประชาชน เพื่อพิมพ์ใบค่าธรรมเนียม
+Route::get('/print-fee/{scope}', [FeeSlipController::class, 'search'])
+    ->whereIn('scope', ['grad', 'teacher'])
+    ->name('feeslip.search');
 
 Route::get('/money', function () {
     return view('money');

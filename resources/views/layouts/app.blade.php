@@ -188,8 +188,10 @@
                                 </a>
                                 <div class="collapse submenu ps-3" id="menuFeeSlip">
                                     <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link" href="#">โท-เอก</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="#">วิชาชีพครู</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="{{ route('feeslip.search', 'grad') }}">โท-เอก</a></li>
+                                        <li class="nav-item"><a class="nav-link"
+                                                href="{{ route('feeslip.search', 'teacher') }}">วิชาชีพครู</a></li>
                                     </ul>
                                 </div>
                             </li>
