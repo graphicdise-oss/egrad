@@ -39,12 +39,13 @@
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .sidebar .navbar-brand {
         font-size: 1.15rem;
         letter-spacing: .02em;
+        margin-top: 40px;
     }
 
     .sidebar .nav-item {
