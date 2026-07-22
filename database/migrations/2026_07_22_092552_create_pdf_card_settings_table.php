@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('pdf_card_settings', function (Blueprint $table) {
+        Schema::connection('pgsql_local')->create('pdf_card_settings', function (Blueprint $table) {
             $table->id();
             $table->string('degree', 20); // master, doctor, teacher
             $table->unsignedTinyInteger('term'); // 1 หรือ 2
@@ -25,6 +25,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('pdf_card_settings');
+        Schema::connection('pgsql_local')->dropIfExists('pdf_card_settings');
     }
 };
