@@ -22,6 +22,7 @@
         body {
             font-family: 'sarabun', sans-serif;
             font-size: 15pt;
+            line-height: 1;
             margin: 12px 15px 15px;
         }
 
@@ -52,8 +53,9 @@
         }
 
         table.info td {
-            padding: 3px 6px;
+            padding: 1px 6px;
             vertical-align: top;
+            line-height: 1;
         }
 
         .label {
@@ -61,7 +63,8 @@
         }
 
         .announce p {
-            margin: 2px 0;
+            margin: 1px 0;
+            line-height: 1;
         }
 
         .affidavit {
