@@ -98,13 +98,9 @@
             <td colspan="3"><span class="label">ที่อยู่ :</span> {{ trim($student->address) }}</td>
         </tr>
         <tr>
-            <td colspan="3"><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
-        </tr>
-        <tr>
-            <td colspan="3"><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
-        </tr>
-        <tr>
-            <td colspan="3"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
+            <td width="34%"><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
+            <td width="33%"><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
+            <td width="33%"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
         </tr>
         <tr>
             <td colspan="3"><span class="label">วุฒิการศึกษาสูงสุดที่ใช้ในการสมัครสอบ :</span>
