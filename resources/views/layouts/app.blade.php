@@ -33,7 +33,7 @@
     }
 
     .sidebar {
-        width: 165px;
+        width: 205px;
         flex-shrink: 0;
         overflow: hidden;
         background: linear-gradient(180deg, #1f9146, #156a34) !important;
@@ -66,10 +66,10 @@
     }
 
     .sidebar .nav-link {
-        color: rgba(255, 255, 255, 0.9);
+        color: #ffffff;
         border-radius: 8px;
-        padding: 8px 10px;
-        font-size: 0.95rem;
+        padding: 10px 12px;
+        font-size: 1.1rem;
         font-weight: 700;
     }
 
@@ -89,10 +89,10 @@
     }
 
     .sidebar .submenu .nav-link {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 0.85rem;
+        color: #ffffff;
+        font-size: 1rem;
         font-weight: 400;
-        padding: 6px 10px;
+        padding: 8px 12px;
     }
 
     .sidebar .caret {
