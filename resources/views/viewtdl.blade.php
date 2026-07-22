@@ -4,12 +4,18 @@
 
     <style>
         .table-custom {
-            font-size: 0.85rem;
-            /* ลดขนาดตัวอักษรลงเล็กน้อย */
+            font-size: 16px;
             width: 100%;
             table-layout: fixed;
             /* บังคับความกว้างตามที่กำหนด */
             word-wrap: break-word;
+        }
+
+        /* ✅ บังคับตัวอักษรในตารางให้เท่ากันหมด 16px (badge/small/strong เดิมเล็ก/ใหญ่ไม่เท่ากัน) */
+        .table-custom small,
+        .table-custom strong,
+        .table-custom .badge {
+            font-size: 16px !important;
         }
 
         .table-custom th,
@@ -45,7 +51,7 @@
         /* ลดขนาดตัวอักษร/กรอบของฟอร์มค้นหา (เดิมโตตามฟอนต์ TH Sarabun ของ body) */
         .page-card .form-select,
         .page-card .btn {
-            font-size: 0.9rem;
+            font-size: 16px;
             padding: 0.35rem 0.7rem;
             border-radius: 8px;
         }
@@ -154,12 +160,6 @@
         </div>
 
         {{-- ตาราง --}}
-
-        <style>
-            .table-custom {
-                font-size: 14px;
-            }
-        </style>
 
         <div class="table-wrapper">
         <div class="table-scroll">
