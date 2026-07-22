@@ -73,9 +73,9 @@
 
     .sidebar .submenu .nav-link {
         color: rgba(255, 255, 255, 0.75);
-        font-size: 0.92rem;
+        font-size: 0.85rem;
         font-weight: 400;
-        padding: 8px 12px;
+        padding: 6px 10px;
     }
 
     .sidebar .caret {
@@ -148,7 +148,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://oldent.vru.ac.th/Webregister/pages/home_admin.php">หน้าแรก</a>
                 </li>
+            </ul>
 
+            <hr class="text-white-50 my-2">
+
+            <ul class="nav flex-column">
                 {{-- จันทร์-ศุกร์ --}}
                 <li class="nav-item">
                     <a class="nav-link d-flex justify-content-between align-items-center" href="#menuMonFri"

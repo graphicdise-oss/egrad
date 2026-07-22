@@ -50,8 +50,13 @@
         /* ลดขนาดตัวอักษร/กรอบของฟอร์มค้นหา (เดิมโตตามฟอนต์ TH Sarabun ของ body) */
         .page-card .form-select,
         .page-card .btn {
-            font-size: 1rem;
-            padding: 0.45rem 0.9rem;
+            font-size: 0.9rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 8px;
+        }
+
+        .page-card form.row {
+            --bs-gutter-x: 0.75rem;
         }
 
         .table-wrapper {
@@ -171,9 +176,9 @@
                     <th style="width: 30px;">ลำดับ</th>
                     <th style="width: 60px;">รหัสสมัคร</th>
                     <th style="width: 90px;">บัตรประชาชน</th>
-                    <th style="width: 130px;">ชื่อ-นามสกุล</th>
-                    <th style="width: 75px;">IDline</th>
-                    <th style="width: 75px;">เบอร์โทร</th>
+                    <th style="width: 105px;">ชื่อ-นามสกุล</th>
+                    <th style="width: 60px;">IDline</th>
+                    <th style="width: 60px;">เบอร์โทร</th>
                     <th style="width: 100px;">ปริญญา</th>
                     <th style="width: 55px;">ระดับ</th>
                     <th style="width: 55px;">ภาค/ปีการศึกษา</th>
