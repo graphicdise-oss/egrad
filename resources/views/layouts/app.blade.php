@@ -9,8 +9,22 @@
 </head>
 
 <style>
+    @font-face {
+        font-family: 'THSarabunNew';
+        src: url('{{ asset('fonts/THSarabunNew.ttf') }}') format('truetype');
+        font-weight: 400;
+    }
+
+    @font-face {
+        font-family: 'THSarabunNew';
+        src: url('{{ asset('fonts/THSarabunNew-Bold.ttf') }}') format('truetype');
+        font-weight: 700;
+    }
+
     body {
         margin: 0;
+        font-family: 'THSarabunNew', sans-serif;
+        font-size: 20px;
     }
 
     .app-layout {
@@ -21,11 +35,24 @@
     .sidebar {
         width: 260px;
         flex-shrink: 0;
+        background: linear-gradient(180deg, #1f9146, #156a34) !important;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar .navbar-brand {
+        font-size: 1.4rem;
+        letter-spacing: .02em;
+    }
+
+    .sidebar .nav-item {
+        margin-bottom: 4px;
     }
 
     .sidebar .nav-link {
         color: rgba(255, 255, 255, 0.9);
         border-radius: 8px;
+        padding: 10px 14px;
+        font-weight: 700;
     }
 
     .sidebar .nav-link:hover,
@@ -34,9 +61,20 @@
         color: #fff;
     }
 
+    .sidebar .submenu {
+        border-left: 2px solid rgba(255, 255, 255, 0.2);
+        margin-left: 14px;
+    }
+
+    .sidebar .submenu .nav-item {
+        margin-bottom: 2px;
+    }
+
     .sidebar .submenu .nav-link {
         color: rgba(255, 255, 255, 0.75);
         font-size: 0.92rem;
+        font-weight: 400;
+        padding: 8px 12px;
     }
 
     .sidebar .caret {

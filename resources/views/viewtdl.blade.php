@@ -58,10 +58,19 @@
             background-color: #1e7e34;
             color: #fff;
             border-color: #1e7e34;
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
 
         .table-custom tbody tr:hover {
             background-color: #f2fbf5;
+        }
+
+        /* ✅ จำกัดความสูงตาราง เลื่อนดูข้างในแทนที่จะยาวทั้งหน้า */
+        .table-scroll {
+            max-height: 70vh;
+            overflow-y: auto;
         }
     </style>
 
@@ -148,6 +157,7 @@
         </style>
 
         <div class="table-wrapper">
+        <div class="table-scroll">
         <table class="table table-bordered table-sm table-custom">
             <thead class="table-light">
                 <tr>
@@ -249,6 +259,7 @@
 
             </tbody>
         </table>
+        </div>
         </div>
     </div>
 @endsection
