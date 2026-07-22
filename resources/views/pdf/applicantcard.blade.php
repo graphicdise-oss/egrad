@@ -22,7 +22,7 @@
         body {
             font-family: 'sarabun', sans-serif;
             font-size: 15pt;
-            margin: 35px;
+            margin: 15px 25px 25px;
         }
 
         h3 {
@@ -70,6 +70,10 @@
     </style>
 </head>
 
+@php
+    // ฟิลด์ตำบล/อำเภอ/จังหวัด ของใบสมัครบางส่วนยังไม่ได้เก็บจริง (ค่า default เป็น "0") ไม่ต้องโชว์ "0" ให้ดูแปลก
+    $showVal = fn($v) => in_array(trim((string) $v), ['', '0'], true) ? '' : trim($v);
+@endphp
 <body>
     <p class="code"><span class="label">รหัสประจำตัวผู้สมัคร</span> {{ $student->name_id }}</p>
     <h3>บัตรประจำตัวผู้สมัคร</h3>
@@ -88,37 +92,43 @@
 
     <table class="info">
         <tr>
-            <td width="40%"><span class="label">ข้าพเจ้าชื่อ :</span> {{ trim($student->prefix) }}
+            <td width="50%"><span class="label">ข้าพเจ้าชื่อ :</span> {{ trim($student->prefix) }}
                 {{ trim($student->name_na) }}</td>
-            <td width="30%"><span class="label">นามสกุล :</span> {{ trim($student->surname_su) }}</td>
-            <td width="30%"><span class="label">รหัสบัตรประชาชน :</span> {{ trim($student->cardid2) }}</td>
+            <td width="50%"><span class="label">นามสกุล :</span> {{ trim($student->surname_su) }}</td>
         </tr>
         <tr>
-            <td colspan="3"><span class="label">อยู่บ้านเลขที่ :</span> {{ trim($student->address) }}</td>
+            <td colspan="2"><span class="label">รหัสบัตรประชาชน :</span> {{ trim($student->cardid2) }}</td>
         </tr>
         <tr>
-            <td><span class="label">ตำบล :</span> {{ trim($student->district) }}</td>
-            <td><span class="label">อำเภอ :</span> {{ trim($student->districts) }}</td>
-            <td><span class="label">จังหวัด :</span> {{ trim($student->province) }}</td>
+            <td colspan="2"><span class="label">ที่อยู่ :</span> {{ trim($student->address) }}</td>
+        </tr>
+        <tr>
+            <td><span class="label">ตำบล :</span> {{ $showVal($student->district) }}</td>
+            <td><span class="label">อำเภอ :</span> {{ $showVal($student->districts) }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><span class="label">จังหวัด :</span> {{ $showVal($student->province) }}</td>
         </tr>
         <tr>
             <td><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
-            <td colspan="2"><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
+            <td><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
         </tr>
         <tr>
-            <td colspan="3"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
+            <td colspan="2"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
         </tr>
         <tr>
-            <td colspan="3"><span class="label">วุฒิการศึกษาสูงสุดที่ใช้ในการสมัครสอบ :</span>
+            <td colspan="2"><span class="label">วุฒิการศึกษาสูงสุดที่ใช้ในการสมัครสอบ :</span>
                 {{ trim($student->educationan_sch) }} &nbsp;&nbsp;
                 <span class="label">สาย/แขนง/สาขา :</span> {{ trim($student->branch_sch) }}</td>
         </tr>
         <tr>
-            <td colspan="3"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
+            <td colspan="2"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
         </tr>
         <tr>
             <td><span class="label">ระดับคะแนนเฉลี่ยสะสม Gpax :</span> {{ number_format($student->grade_sch, 2) }}
             </td>
+        </tr>
+        <tr>
             <td colspan="2"><span class="label">สาขาที่เลือก :</span> {{ trim($student->branch_one) }}
                 {{ $majorName }}</td>
         </tr>
