@@ -125,17 +125,49 @@
 
         {{-- ฟอร์มค้นหา --}}
         <form method="GET" action="{{ route('apply.docs.index') }}" class="mb-4 row g-3">
+            {{-- เลือกระดับ (โท/เอก/วิชาชีพครู) เพื่อกรองรายการหลักสูตรด้านล่างให้สั้นลง --}}
+            <div class="col-md-2">
+                <select name="level" id="degreeLevel" class="form-select" onchange="filterMajors()">
+                    <option value="" {{ request('level') == '' ? 'selected' : '' }}>ทุกระดับ</option>
+                    <option value="master" {{ request('level') == 'master' ? 'selected' : '' }}>โท</option>
+                    <option value="doctor" {{ request('level') == 'doctor' ? 'selected' : '' }}>เอก</option>
+                    <option value="teacher" {{ request('level') == 'teacher' ? 'selected' : '' }}>วิชาชีพครู</option>
+                </select>
+            </div>
+
             {{-- เลือกหลักสูตร (ใช้ Hardcode Array) --}}
             <div class="col-md-4">
-                <select name="degree" class="form-select">
+                <select name="degree" id="degreeSelect" class="form-select">
                     <option value="">ทั้งหมด</option>
                     @foreach($hardcoded_majors as $code => $name)
-                        <option value="{{ $code }}" {{ request('degree') == $code ? 'selected' : '' }}>
+                        @php
+                            $optionLevel = $code === '72001' ? 'teacher' : (str_starts_with($code, '70') ? 'master' : 'doctor');
+                        @endphp
+                        <option value="{{ $code }}" data-level="{{ $optionLevel }}"
+                            {{ request('degree') == $code ? 'selected' : '' }}>
                             {{ $name }}
                         </option>
                     @endforeach
                 </select>
             </div>
+
+            <script>
+                function filterMajors() {
+                    const level = document.getElementById('degreeLevel').value;
+                    const select = document.getElementById('degreeSelect');
+
+                    [...select.options].forEach(opt => {
+                        if (!opt.dataset.level) return; // ตัวเลือก "ทั้งหมด"
+                        const match = !level || opt.dataset.level === level;
+                        opt.hidden = !match;
+                        if (!match && opt.selected) {
+                            select.value = '';
+                        }
+                    });
+                }
+
+                document.addEventListener('DOMContentLoaded', filterMajors);
+            </script>
 
             {{-- เลือกปี/เทอม --}}
             <div class="col-md-3">

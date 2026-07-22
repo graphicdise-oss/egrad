@@ -56,6 +56,13 @@ class ApplyDocController extends Controller
         */
         if ($request->filled('degree') && $request->degree !== 'teacher') {
             $query->where('s.branch_one', $request->degree);
+        } elseif ($request->filled('level')) {
+            // เลือกแค่ระดับ (โท/เอก/วิชาชีพครู) โดยไม่ได้เจาะจงหลักสูตร
+            $levelToStatusId = ['master' => '2', 'doctor' => '3', 'teacher' => '4'];
+
+            if (isset($levelToStatusId[$request->level])) {
+                $query->whereRaw('LTRIM(RTRIM(s.master_status_id)) = ?', [$levelToStatusId[$request->level]]);
+            }
         }
 
         /*
