@@ -33,25 +33,26 @@
     }
 
     .sidebar {
-        width: 200px;
+        width: 165px;
         flex-shrink: 0;
         background: linear-gradient(180deg, #1f9146, #156a34) !important;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .sidebar .navbar-brand {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
         letter-spacing: .02em;
     }
 
     .sidebar .nav-item {
-        margin-bottom: 4px;
+        margin-bottom: 2px;
     }
 
     .sidebar .nav-link {
         color: rgba(255, 255, 255, 0.9);
         border-radius: 8px;
-        padding: 10px 14px;
+        padding: 8px 10px;
+        font-size: 0.95rem;
         font-weight: 700;
     }
 
@@ -140,8 +141,8 @@
 
     <div class="app-layout">
         {{-- เมนูด้านซ้าย --}}
-        <nav class="sidebar collapse d-md-block bg-success text-white p-3" id="sidebarMenu">
-            <a class="navbar-brand text-white fw-bold d-none d-md-block mb-4" href="#">VRU Apply</a>
+        <nav class="sidebar collapse d-md-block bg-success text-white p-2" id="sidebarMenu">
+            <a class="navbar-brand text-white fw-bold d-none d-md-block mb-3" href="#">VRU Apply</a>
 
             <ul class="nav flex-column">
                 <li class="nav-item">

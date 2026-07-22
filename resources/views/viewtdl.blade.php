@@ -14,7 +14,7 @@
 
         .table-custom th,
         .table-custom td {
-            padding: 8px 4px !important;
+            padding: 6px 3px !important;
             /* ลด padding ซ้ายขวา */
             vertical-align: middle;
             text-align: center;
@@ -161,22 +161,22 @@
         <table class="table table-bordered table-sm table-custom">
             <thead class="table-light">
                 <tr>
-                    <th style="width: 35px;">ลำดับ</th>
-                    <th style="width: 70px;">รหัสสมัคร</th>
-                    <th style="width: 100px;">บัตรประชาชน</th>
-                    <th style="width: 150px;">ชื่อ-นามสกุล</th>
-                    <th style="width: 90px;">IDline</th>
-                    <th style="width: 90px;">เบอร์โทร</th>
-                    <th style="width: 120px;">ปริญญา</th>
-                    <th style="width: 70px;">ระดับ</th>
-                    <th style="width: 65px;">ภาค/ปีการศึกษา</th>
-                    <th style="width: 110px;">สาขาเรียน</th>
-                    <th style="width: 45px;">เกรด</th>
-                    <th style="width: 85px;">ค่าสมัคร</th>
-                    <th style="width: 85px;">ค่าลงทะเบียน</th>
-                    <th style="width: 100px;">สถานะ</th>
-                    <th style="width: 70px;">เอกสาร</th>
-                    <th style="width: 70px;">สมัคร</th>
+                    <th style="width: 30px;">ลำดับ</th>
+                    <th style="width: 60px;">รหัสสมัคร</th>
+                    <th style="width: 90px;">บัตรประชาชน</th>
+                    <th style="width: 130px;">ชื่อ-นามสกุล</th>
+                    <th style="width: 75px;">IDline</th>
+                    <th style="width: 75px;">เบอร์โทร</th>
+                    <th style="width: 100px;">ปริญญา</th>
+                    <th style="width: 55px;">ระดับ</th>
+                    <th style="width: 55px;">ภาค/ปีการศึกษา</th>
+                    <th style="width: 90px;">สาขาเรียน</th>
+                    <th style="width: 40px;">เกรด</th>
+                    <th style="width: 70px;">ค่าสมัคร</th>
+                    <th style="width: 70px;">ค่าลงทะเบียน</th>
+                    <th style="width: 85px;">สถานะ</th>
+                    <th style="width: 60px;">เอกสาร</th>
+                    <th style="width: 65px;">สมัคร</th>
                 </tr>
             </thead>
             <tbody>
