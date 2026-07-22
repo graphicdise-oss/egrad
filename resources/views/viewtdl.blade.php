@@ -47,6 +47,13 @@
             font-weight: 700;
         }
 
+        /* ลดขนาดตัวอักษร/กรอบของฟอร์มค้นหา (เดิมโตตามฟอนต์ TH Sarabun ของ body) */
+        .page-card .form-select,
+        .page-card .btn {
+            font-size: 1rem;
+            padding: 0.45rem 0.9rem;
+        }
+
         .table-wrapper {
             background: #ffffff;
             border-radius: 16px;
