@@ -98,8 +98,10 @@
             <td colspan="3"><span class="label">ที่อยู่ :</span> {{ trim($student->address) }}</td>
         </tr>
         <tr>
-            <td><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
-            <td colspan="2"><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
+            <td colspan="3"><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
+        </tr>
+        <tr>
+            <td colspan="3"><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
         </tr>
         <tr>
             <td colspan="3"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
@@ -113,9 +115,11 @@
             <td colspan="3"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
         </tr>
         <tr>
-            <td><span class="label">ระดับคะแนนเฉลี่ยสะสม Gpax :</span> {{ number_format($student->grade_sch, 2) }}
-            </td>
-            <td colspan="2"><span class="label">สาขาที่เลือก :</span> {{ trim($student->branch_one) }}
+            <td colspan="3"><span class="label">ระดับคะแนนเฉลี่ยสะสม Gpax :</span>
+                {{ number_format($student->grade_sch, 2) }}</td>
+        </tr>
+        <tr>
+            <td colspan="3"><span class="label">สาขาที่เลือก :</span> {{ trim($student->branch_one) }}
                 {{ $majorName }}</td>
         </tr>
     </table>
