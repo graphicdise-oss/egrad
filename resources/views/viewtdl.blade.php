@@ -32,10 +32,42 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+        /* ✅ ปรับความสวยงามของหน้านี้ (ดีไซน์เท่านั้น ไม่แตะฟิลด์/query เดิม) */
+        .page-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 28px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+            margin-bottom: 24px;
+        }
+
+        .page-card h2 {
+            color: #1e7e34;
+            font-weight: 700;
+        }
+
+        .table-wrapper {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .table-custom thead th {
+            background-color: #1e7e34;
+            color: #fff;
+            border-color: #1e7e34;
+        }
+
+        .table-custom tbody tr:hover {
+            background-color: #f2fbf5;
+        }
     </style>
 
-    <div class="container mt-4">
-        <h2 class="mb-4">เอกสารแบบการสมัคร ปริญญาโท - ปริญญาเอก</h2>
+    <div class="container-fluid mt-4">
+        <div class="page-card">
+            <h2 class="mb-4">เอกสารแบบการสมัคร ปริญญาโท - ปริญญาเอก</h2>
 
         {{-- กำหนดข้อมูลหลักสูตรแบบ Hardcode (ใช้ MajorCode เป็น Key) --}}
         @php
@@ -105,6 +137,7 @@
                 <button class="btn btn-success w-100" type="submit">ค้นหา</button>
             </div>
         </form>
+        </div>
 
         {{-- ตาราง --}}
 
@@ -114,6 +147,7 @@
             }
         </style>
 
+        <div class="table-wrapper">
         <table class="table table-bordered table-sm table-custom">
             <thead class="table-light">
                 <tr>
@@ -215,5 +249,6 @@
 
             </tbody>
         </table>
+        </div>
     </div>
 @endsection
