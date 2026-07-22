@@ -33,7 +33,7 @@
     }
 
     .sidebar {
-        width: 205px;
+        width: 165px;
         flex-shrink: 0;
         overflow: hidden;
         background: linear-gradient(180deg, #1f9146, #156a34) !important;
