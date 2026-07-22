@@ -36,15 +36,10 @@
         /* ✅ ปรับความสวยงามของหน้านี้ (ดีไซน์เท่านั้น ไม่แตะฟิลด์/query เดิม) */
         .page-card {
             background: #ffffff;
-            border-radius: 16px;
-            padding: 24px 28px;
+            border-radius: 14px;
+            padding: 14px 18px;
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-            margin-bottom: 24px;
-        }
-
-        .page-card h2 {
-            color: #1e7e34;
-            font-weight: 700;
+            margin-bottom: 16px;
         }
 
         /* ลดขนาดตัวอักษร/กรอบของฟอร์มค้นหา (เดิมโตตามฟอนต์ TH Sarabun ของ body) */
@@ -88,8 +83,6 @@
 
     <div class="container-fluid mt-4">
         <div class="page-card">
-            <h2 class="mb-4">เอกสารแบบการสมัคร ปริญญาโท - ปริญญาเอก</h2>
-
         {{-- กำหนดข้อมูลหลักสูตรแบบ Hardcode (ใช้ MajorCode เป็น Key) --}}
         @php
             $hardcoded_majors = [
