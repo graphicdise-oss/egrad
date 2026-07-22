@@ -28,18 +28,28 @@
     }
 
     .app-layout {
-        display: flex;
         min-height: 100vh;
     }
 
     .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
         width: 165px;
-        flex-shrink: 0;
+        overflow-y: auto;
         background: linear-gradient(180deg, #1f9146, #156a34) !important;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        transform: translateX(-100%);
+        transition: transform .25s ease;
+        z-index: 1040;
+    }
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
     }
 
     .sidebar .navbar-brand {
@@ -92,27 +102,23 @@
     }
 
     .app-content {
-        flex-grow: 1;
-        min-width: 0;
+        width: 100%;
     }
 
-    /* ปุ่มเปิด/ปิดเมนู ลอยไว้มุมซ้ายบน ใช้ได้ทั้งจอใหญ่/จอเล็ก */
+    /* ปุ่มเปิด/ปิดเมนู ติดอยู่ที่ขอบบนซ้ายสุดพอดี (ไม่มีช่องว่าง) */
     .sidebar-toggle-btn {
         position: fixed;
-        top: 10px;
-        left: 10px;
+        top: 0;
+        left: 0;
         z-index: 1050;
-        border-radius: 8px;
+        border-radius: 0 0 8px 0;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     @media (max-width: 767px) {
-        .app-layout {
-            flex-direction: column;
-        }
-
         .sidebar {
-            width: 100%;
+            width: 80%;
+            max-width: 260px;
         }
     }
 
@@ -138,7 +144,7 @@
 
     <div class="app-layout">
         {{-- เมนูด้านซ้าย --}}
-        <nav class="sidebar bg-success text-white p-2" id="sidebarMenu">
+        <nav class="sidebar sidebar-open bg-success text-white p-2" id="sidebarMenu">
             <a class="navbar-brand text-white fw-bold mb-3" href="#">VRU Apply</a>
 
             <ul class="nav flex-column">
@@ -271,7 +277,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById('sidebarToggleBtn').addEventListener('click', function () {
-            document.getElementById('sidebarMenu').classList.toggle('d-none');
+            document.getElementById('sidebarMenu').classList.toggle('sidebar-open');
         });
     </script>
 </body>
