@@ -19,10 +19,26 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginGradController;
 use App\Http\Controllers\LoginApplyController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PdfCardController;
+use App\Http\Controllers\PdfCardSettingController;
 
 
 Route::get('/apply-docs', [ApplyDocController::class, 'index'])
     ->name('apply.docs.index');
+
+// ตั้งค่าข้อความหัวบัตรประจำตัวผู้สมัคร (แยกตามหลักสูตร/เทอม ปีปัจจุบันอัตโนมัติ)
+Route::get('/pdf-settings/{degree}/{term}', [PdfCardSettingController::class, 'edit'])
+    ->whereIn('degree', ['master', 'doctor', 'teacher'])
+    ->whereIn('term', [1, 2])
+    ->name('pdfsettings.edit');
+Route::put('/pdf-settings/{degree}/{term}', [PdfCardSettingController::class, 'update'])
+    ->whereIn('degree', ['master', 'doctor', 'teacher'])
+    ->whereIn('term', [1, 2])
+    ->name('pdfsettings.update');
+
+// พิมพ์บัตรประจำตัวผู้สมัคร (PDF)
+Route::get('/pdf-card/{name_id}', [PdfCardController::class, 'show'])
+    ->name('pdfcard.show');
 
 Route::get('/money', function () {
     return view('money');

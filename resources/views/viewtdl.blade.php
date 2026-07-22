@@ -182,6 +182,7 @@
                     <th style="width: 68px;">สถานะ</th>
                     <th style="width: 60px;">เอกสาร</th>
                     <th style="width: 65px;">สมัคร</th>
+                    <th style="width: 65px;">บัตร</th>
                 </tr>
             </thead>
             <tbody>
@@ -254,10 +255,17 @@
                         <td><small>{{ $s->insert_datetime }}</small></td>
                         </td>
 
+                        <td>
+                            <a href="{{ route('pdfcard.show', $s->name_id) }}" target="_blank"
+                                class="btn btn-sm btn-outline-success">
+                                พิมพ์บัตร
+                            </a>
+                        </td>
+
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="15" class="text-center py-4 text-muted">ไม่พบข้อมูลนักเรียนในปีการศึกษานี้</td>
+                        <td colspan="17" class="text-center py-4 text-muted">ไม่พบข้อมูลนักเรียนในปีการศึกษานี้</td>
                     </tr>
                 @endforelse
 
