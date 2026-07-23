@@ -127,9 +127,11 @@
             <td width="33%"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
         </tr>
         <tr>
-            <td width="50%"><span class="label">วุฒิการศึกษาสูงสุดที่ใช้ในการสมัครสอบ :</span>
+            <td colspan="3"><span class="label">วุฒิการศึกษาสูงสุดที่ใช้ในการสมัครสอบ :</span>
                 {{ trim($student->educationan_sch) }}</td>
-            <td width="50%"><span class="label">สาย/แขนง/สาขา :</span> {{ trim($student->branch_sch) }}</td>
+        </tr>
+        <tr>
+            <td colspan="3"><span class="label">สาย/แขนง/สาขา :</span> {{ trim($student->branch_sch) }}</td>
         </tr>
         <tr>
             <td colspan="3"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
