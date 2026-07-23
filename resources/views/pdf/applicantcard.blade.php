@@ -20,7 +20,7 @@
         }
 
         @page {
-            margin: 0 15px 15px 15px;
+            margin: 0 1in 15px 1in;
         }
 
         body {
