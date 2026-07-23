@@ -23,7 +23,15 @@
             font-family: 'sarabun', sans-serif;
             font-size: 15pt;
             line-height: 1;
-            margin: 12px 15px 15px;
+            margin: 5px 15px 15px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+            width: 90px;
+            height: auto;
         }
 
         h3 {
@@ -75,6 +83,8 @@
 </head>
 
 <body>
+    <img src="{{ public_path('images/formpdf/logovru001.png') }}" class="logo">
+
     <p class="code"><span class="label">รหัสประจำตัวผู้สมัคร</span> {{ $student->name_id }}</p>
     <h3>บัตรประจำตัวผู้สมัคร</h3>
     <p class="center">มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ ในพระบรมราชูปถัมภ์ จังหวัดปทุมธานี</p>
