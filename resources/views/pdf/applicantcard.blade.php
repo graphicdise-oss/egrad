@@ -20,20 +20,20 @@
         }
 
         @page {
-            margin: 0;
+            margin: 0 15px 15px 15px;
         }
 
         body {
             font-family: 'sarabun', sans-serif;
             font-size: 15pt;
             line-height: 1;
-            margin: 0px 15px 15px;
+            margin: 0;
         }
 
         .logo {
             position: absolute;
-            top: 0px;
-            left: 15px;
+            top: 0;
+            left: 0;
             width: 55px;
             height: auto;
         }
