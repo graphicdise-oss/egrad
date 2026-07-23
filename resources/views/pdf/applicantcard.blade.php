@@ -111,12 +111,10 @@
 
     <table class="info">
         <tr>
-            <td width="50%"><span class="label">ข้าพเจ้าชื่อ :</span> {{ trim($student->prefix) }}
+            <td width="34%"><span class="label">ข้าพเจ้าชื่อ :</span> {{ trim($student->prefix) }}
                 {{ trim($student->name_na) }}</td>
-            <td width="50%"><span class="label">นามสกุล :</span> {{ trim($student->surname_su) }}</td>
-        </tr>
-        <tr>
-            <td colspan="3"><span class="label">รหัสบัตรประชาชน :</span> {{ trim($student->cardid2) }}</td>
+            <td width="26%"><span class="label">นามสกุล :</span> {{ trim($student->surname_su) }}</td>
+            <td width="40%"><span class="label">รหัสบัตรประชาชน :</span> {{ trim($student->cardid2) }}</td>
         </tr>
         <tr>
             <td colspan="3"><span class="label">ที่อยู่ :</span> {{ trim($student->address) }}</td>
