@@ -135,6 +135,9 @@
             <td colspan="3"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
         </tr>
         <tr>
+            <td colspan="3"><span class="label">จังหวัด :</span> {{ trim($student->province_sch) }}</td>
+        </tr>
+        <tr>
             <td colspan="3"><span class="label">ระดับคะแนนเฉลี่ยสะสม Gpax :</span>
                 {{ number_format($student->grade_sch, 2) }}</td>
         </tr>
