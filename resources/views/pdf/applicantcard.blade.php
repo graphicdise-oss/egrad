@@ -19,6 +19,10 @@
             src: url('{{ storage_path("fonts/THSarabunNew-Bold.ttf") }}') format('truetype');
         }
 
+        @page {
+            margin: 0;
+        }
+
         body {
             font-family: 'sarabun', sans-serif;
             font-size: 15pt;
@@ -77,6 +81,7 @@
 
         .affidavit {
             font-size: 12pt;
+            font-weight: bold;
             margin-top: 16px;
         }
     </style>
