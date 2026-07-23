@@ -91,10 +91,6 @@
     </style>
 </head>
 
-@php
-    // บางฟิลด์ (ตำบล/อำเภอ/จังหวัด) ของใบสมัครที่ยื่นผ่านฟอร์มใหม่ยังไม่ได้เก็บจริง (ค่า default เป็น "0")
-    $showVal = fn($v) => in_array(trim((string) $v), ['', '0'], true) ? '' : trim($v);
-@endphp
 <body>
     <img src="{{ public_path('images/formpdf/logovru001.png') }}" class="logo">
 
@@ -115,23 +111,20 @@
 
     <table class="info">
         <tr>
-            <td width="36%"><span class="label">ข้าพเจ้าชื่อ :</span> {{ trim($student->prefix) }}
+            <td width="50%"><span class="label">ข้าพเจ้าชื่อ :</span> {{ trim($student->prefix) }}
                 {{ trim($student->name_na) }}</td>
-            <td width="26%"><span class="label">นามสกุล :</span> {{ trim($student->surname_su) }}</td>
-            <td width="38%"><span class="label">รหัสบัตรประชาชน :</span> {{ trim($student->cardid2) }}</td>
+            <td width="50%"><span class="label">นามสกุล :</span> {{ trim($student->surname_su) }}</td>
         </tr>
         <tr>
-            <td width="40%"><span class="label">ที่อยู่ :</span> {{ trim($student->address) }}</td>
-            <td width="30%"><span class="label">ตำบล :</span> {{ $showVal($student->district) }}</td>
-            <td width="30%"><span class="label">อำเภอ :</span> {{ $showVal($student->districts) }}</td>
+            <td colspan="3"><span class="label">รหัสบัตรประชาชน :</span> {{ trim($student->cardid2) }}</td>
         </tr>
         <tr>
-            <td width="34%"><span class="label">จังหวัด :</span> {{ $showVal($student->province) }}</td>
-            <td width="33%"><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
+            <td colspan="3"><span class="label">ที่อยู่ :</span> {{ trim($student->address) }}</td>
+        </tr>
+        <tr>
+            <td width="34%"><span class="label">รหัสไปรษณีย์ :</span> {{ trim($student->postcard) }}</td>
             <td width="33%"><span class="label">โทรศัพท์ :</span> {{ trim($student->telephone) }}</td>
-        </tr>
-        <tr>
-            <td colspan="3"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
+            <td width="33%"><span class="label">ไลน์ ID :</span> {{ trim($student->email) }}</td>
         </tr>
         <tr>
             <td width="50%"><span class="label">วุฒิการศึกษาสูงสุดที่ใช้ในการสมัครสอบ :</span>
@@ -139,8 +132,7 @@
             <td width="50%"><span class="label">สาย/แขนง/สาขา :</span> {{ trim($student->branch_sch) }}</td>
         </tr>
         <tr>
-            <td width="65%"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
-            <td width="35%"><span class="label">จังหวัด :</span> {{ $showVal($student->province_sch) }}</td>
+            <td colspan="3"><span class="label">จากโรงเรียน/วิทยาลัย :</span> {{ trim($student->place_sch) }}</td>
         </tr>
         <tr>
             <td colspan="3"><span class="label">ระดับคะแนนเฉลี่ยสะสม Gpax :</span>
