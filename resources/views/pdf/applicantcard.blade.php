@@ -23,14 +23,14 @@
             font-family: 'sarabun', sans-serif;
             font-size: 15pt;
             line-height: 1;
-            margin: 5px 15px 15px;
+            margin: 0px 15px 15px;
         }
 
         .logo {
             position: absolute;
-            top: 5px;
+            top: 0px;
             left: 15px;
-            width: 90px;
+            width: 55px;
             height: auto;
         }
 
