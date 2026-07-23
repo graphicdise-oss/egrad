@@ -20,7 +20,7 @@
         }
 
         @page {
-            margin: 0 1in 15px 1in;
+            margin: 4px 0.8in 15px 0.8in;
         }
 
         body {
@@ -41,16 +41,19 @@
         h3 {
             text-align: center;
             margin: 2px 0;
+            line-height: 1;
         }
 
         p.center {
             text-align: center;
             margin: 2px 0;
+            line-height: 1;
         }
 
         p.code {
             text-align: right;
             margin: 0 0 6px;
+            line-height: 1;
         }
 
         .divider {
@@ -82,6 +85,7 @@
         .affidavit {
             font-size: 12pt;
             font-weight: bold;
+            line-height: 1;
             margin-top: 16px;
         }
     </style>
