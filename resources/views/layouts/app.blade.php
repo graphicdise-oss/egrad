@@ -207,56 +207,12 @@
                     </a>
                     <div class="collapse submenu ps-3" id="menuPdfSettings">
                         <ul class="nav flex-column">
-                            {{-- โท --}}
-                            <li class="nav-item">
-                                <a class="nav-link d-flex justify-content-between align-items-center"
-                                    href="#menuPdfMaster" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false">
-                                    โท <span class="caret">▾</span>
-                                </a>
-                                <div class="collapse submenu ps-3" id="menuPdfMaster">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('pdfsettings.edit', ['master', 1]) }}">เทอม 1</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('pdfsettings.edit', ['master', 2]) }}">เทอม 2</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            {{-- เอก --}}
-                            <li class="nav-item">
-                                <a class="nav-link d-flex justify-content-between align-items-center"
-                                    href="#menuPdfDoctor" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false">
-                                    เอก <span class="caret">▾</span>
-                                </a>
-                                <div class="collapse submenu ps-3" id="menuPdfDoctor">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('pdfsettings.edit', ['doctor', 1]) }}">เทอม 1</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('pdfsettings.edit', ['doctor', 2]) }}">เทอม 2</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                            {{-- วิชาชีพครู --}}
-                            <li class="nav-item">
-                                <a class="nav-link d-flex justify-content-between align-items-center"
-                                    href="#menuPdfTeacher" data-bs-toggle="collapse" role="button"
-                                    aria-expanded="false">
-                                    วิชาชีพครู <span class="caret">▾</span>
-                                </a>
-                                <div class="collapse submenu ps-3" id="menuPdfTeacher">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('pdfsettings.edit', ['teacher', 1]) }}">เทอม 1</a></li>
-                                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('pdfsettings.edit', ['teacher', 2]) }}">เทอม 2</a></li>
-                                    </ul>
-                                </div>
-                            </li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('pdfsettings.selectTerm', 'master') }}">โท</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('pdfsettings.selectTerm', 'doctor') }}">เอก</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="{{ route('pdfsettings.selectTerm', 'teacher') }}">วิชาชีพครู</a></li>
                         </ul>
                     </div>
                 </li>

@@ -13,6 +13,19 @@ class PdfCardSettingController extends Controller
         'teacher' => 'วิชาชีพครู',
     ];
 
+    public function selectTerm(string $degree)
+    {
+        abort_unless(isset($this->degreeLabels[$degree]), 404);
+
+        $year = now()->year + 543;
+
+        return view('pdfsettings.select-term', [
+            'degree' => $degree,
+            'degreeLabel' => $this->degreeLabels[$degree],
+            'year' => $year,
+        ]);
+    }
+
     public function edit(string $degree, int $term)
     {
         abort_unless(isset($this->degreeLabels[$degree]), 404);

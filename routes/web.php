@@ -28,6 +28,9 @@ Route::get('/apply-docs', [ApplyDocController::class, 'index'])
     ->name('apply.docs.index');
 
 // ตั้งค่าข้อความหัวบัตรประจำตัวผู้สมัคร (แยกตามหลักสูตร/เทอม ปีปัจจุบันอัตโนมัติ)
+Route::get('/pdf-settings/{degree}', [PdfCardSettingController::class, 'selectTerm'])
+    ->whereIn('degree', ['master', 'doctor', 'teacher'])
+    ->name('pdfsettings.selectTerm');
 Route::get('/pdf-settings/{degree}/{term}', [PdfCardSettingController::class, 'edit'])
     ->whereIn('degree', ['master', 'doctor', 'teacher'])
     ->whereIn('term', [1, 2])
